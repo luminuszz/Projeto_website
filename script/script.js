@@ -8,3 +8,14 @@ $(document).ready(function(){
   });
 });
 
+
+function valida(){
+
+	alert("Dseja realmente criar um novo curso?");
+}
+
+
+function valida_aluno(){
+
+	alert("Dseja realmente criar um novo aluno?");
+}

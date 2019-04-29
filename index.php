@@ -33,9 +33,29 @@ elseif ($pagina=='matriculas') {
 	include 'views/matriculas.php';
 }
 
+elseif ($pagina=='inserir_matricula') {
+
+	include 'views/inserir_matricula.php';
+}
+
+
+elseif ($pagina=='inserir_curso') {
+
+	include 'views/inserir_curso.php';
+}
+
+elseif ($pagina=='inserir_aluno') {
+
+	include 'views/inserir_aluno.php';
+	
+}
+
+
+
 else {
 	include 'views/home.php';
 }
+
 include 'views/home.php';
 
 #Rodapé
