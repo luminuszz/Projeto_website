@@ -9,13 +9,10 @@ $(document).ready(function(){
 });
 
 
+
 function valida(){
 
-	alert("Dseja realmente criar um novo curso?");
+	alert("Dseja continuar?");
 }
 
 
-function valida_aluno(){
-
-	alert("Dseja realmente criar um novo aluno?");
-}

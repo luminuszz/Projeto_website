@@ -23,7 +23,7 @@
 		<br>
 
 		<div class="form-group">
-			<button type="input" class="btn btn-primary " id="btn1" onclick="valida()">Enviar</button>
+			<button type="submit" class="btn btn-primary " id="btn1" onclick="valida()">Enviar</button>
 		</div>
 		
 

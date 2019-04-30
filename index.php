@@ -16,49 +16,43 @@ else{
 	$pagina = 'home';
 }
 
+switch ($pagina) {
 
-if ($pagina=='cursos') {
-
+	case 'cursos': 
 	include 'views/cursos.php';
 
-}
-elseif ($pagina=='alunos') {
+	break;
+		
+		
 
-	include'views/alunos.php';
+	case 'alunos':
 
-}
+	include 'views/alunos.php';
 
-elseif ($pagina=='matriculas') {
+	break;
+		
+		
 
-	include 'views/matriculas.php';
-}
+	case 'matriculas':
+		include 'views/matriculas.php';break;
 
-elseif ($pagina=='inserir_matricula') {
+		
 
-	include 'views/inserir_matricula.php';
-}
-
-
-elseif ($pagina=='inserir_curso') {
-
-	include 'views/inserir_curso.php';
-}
-
-elseif ($pagina=='inserir_aluno') {
-
-	include 'views/inserir_aluno.php';
+	case 'inserir_matricula':
+		include 'views/inserir_matricula.php';break;
 	
+
+	case 'inserir_curso':
+		include 'views/inserir_curso.php';break;
+		
+
+	case 'inserir_aluno':
+		include 'views/inserir_aluno.php';break;
+		
+
+		default: include 'views/home.php';break;
+		
 }
+	
 
-
-
-else {
-	include 'views/home.php';
-}
-
-include 'views/home.php';
-
-#Rodapé
-
-include 'footer.php';
 
