@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: 27-Abr-2019 às 13:09
--- Versão do servidor: 5.7.24
--- versão do PHP: 7.2.14
+-- Host: 127.0.0.1
+-- Generation Time: 30-Abr-2019 às 05:01
+-- Versão do servidor: 10.1.38-MariaDB
+-- versão do PHP: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,13 +28,29 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `alunos`
 --
 
-DROP TABLE IF EXISTS `alunos`;
-CREATE TABLE IF NOT EXISTS `alunos` (
-  `id_aluno` int(11) NOT NULL AUTO_INCREMENT,
-  `Nome_aluno` varchar(255) NOT NULL,
-  `data_nascimento` date NOT NULL,
-  PRIMARY KEY (`id_aluno`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+CREATE TABLE `alunos` (
+  `id_aluno` int(11) NOT NULL,
+  `nome_aluno` varchar(255) NOT NULL,
+  `data_nascimento` varchar(255) DEFAULT NULL,
+  `email_aluno` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `alunos`
+--
+
+INSERT INTO `alunos` (`id_aluno`, `nome_aluno`, `data_nascimento`, `email_aluno`) VALUES
+(1, 'Jose', '01-01-1990', ''),
+(2, 'Maria', '01-04-1991', ''),
+(6, 'nome_aluno', 'data_nascimento', 'email_aluno'),
+(7, 'nome_aluno', NULL, 'email_aluno'),
+(8, 'nome_aluno', NULL, 'email_aluno'),
+(9, 'nome_aluno', 'data_nascimento', 'email_aluno'),
+(10, 'dfsdfsdfsdhghj', '', ''),
+(11, 'dfsdfsdfsdhghj', '', ''),
+(12, 'dsad', 'dsad', 'dsad@dsad'),
+(13, 'jorge', '20', '2SD@dsad'),
+(14, 'sad@junior', 'sdad', '2ewad@dssad');
 
 -- --------------------------------------------------------
 
@@ -42,13 +58,11 @@ CREATE TABLE IF NOT EXISTS `alunos` (
 -- Estrutura da tabela `alunos_cursos`
 --
 
-DROP TABLE IF EXISTS `alunos_cursos`;
-CREATE TABLE IF NOT EXISTS `alunos_cursos` (
-  `id_aluno_curso` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `alunos_cursos` (
+  `id_aluno_curso` int(11) NOT NULL,
   `id_aluno` int(11) NOT NULL,
-  `id_curso` int(11) NOT NULL,
-  PRIMARY KEY (`id_aluno_curso`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `id_curso` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `alunos_cursos`
@@ -56,9 +70,10 @@ CREATE TABLE IF NOT EXISTS `alunos_cursos` (
 
 INSERT INTO `alunos_cursos` (`id_aluno_curso`, `id_aluno`, `id_curso`) VALUES
 (1, 8, 1),
-(2, 8, 1),
-(3, 8, 1),
-(4, 8, 1);
+(2, 2, 2),
+(3, 6, 1),
+(4, 13, 1),
+(5, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -66,14 +81,65 @@ INSERT INTO `alunos_cursos` (`id_aluno_curso`, `id_aluno`, `id_curso`) VALUES
 -- Estrutura da tabela `cursos`
 --
 
-DROP TABLE IF EXISTS `cursos`;
-CREATE TABLE IF NOT EXISTS `cursos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `cursos` (
+  `id_curso` int(11) NOT NULL,
   `nome_curso` varchar(255) NOT NULL,
-  `carga_horaria` varchar(255) NOT NULL,
-  `descricao_curso` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `carga_horaria` int(11) NOT NULL,
+  `descricao_curso` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `cursos`
+--
+
+INSERT INTO `cursos` (`id_curso`, `nome_curso`, `carga_horaria`, `descricao_curso`) VALUES
+(1, 'PHP E MYSQL', 10, ''),
+(2, 'sfsd', 25645, '			rdsfsdsdff'),
+(3, 'sfsd', 25645, '			rdsfsdsdff');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `alunos`
+--
+ALTER TABLE `alunos`
+  ADD PRIMARY KEY (`id_aluno`);
+
+--
+-- Indexes for table `alunos_cursos`
+--
+ALTER TABLE `alunos_cursos`
+  ADD PRIMARY KEY (`id_aluno_curso`);
+
+--
+-- Indexes for table `cursos`
+--
+ALTER TABLE `cursos`
+  ADD PRIMARY KEY (`id_curso`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `alunos`
+--
+ALTER TABLE `alunos`
+  MODIFY `id_aluno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `alunos_cursos`
+--
+ALTER TABLE `alunos_cursos`
+  MODIFY `id_aluno_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `cursos`
+--
+ALTER TABLE `cursos`
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

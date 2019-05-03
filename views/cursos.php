@@ -19,6 +19,8 @@
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Descrição</th>
+      <th scope="col">Deletar</th>
+      <th scope="col">Editar</th>
     </tr>
   </thead>
   <tbody id="myTable">
@@ -29,11 +31,27 @@
     echo '<td>'.$linha['nome_curso'].'</td>';
 
     echo "<td>".$linha['descricao_curso'].'</td>
-    </tr>';
+    ';
 
-
-    } 
+    
   ?>
+
+  <td><a href="deleta_curso.php?id_curso=<?php echo $linha['id_curso'];?>"><button class="btn btn-danger btn-sm">deletar</button></a></td>
+
+  <td><a href="?pagina=inserir_curso&editar=<?php echo $linha['id_curso'];?>"><button class="btn btn-info btn-sm">Editar</button></a></td></tr>
+
+
+  
+  <?php
+
+
+
+     }
+
+
+  ?>
+
+
 
 
    

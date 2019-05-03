@@ -41,7 +41,7 @@
 
 
 				<div class="form-group">
-					<button type="submit" onclick="valida()" class="btn btn-primary " id="btn3" >	Enviar
+					<button type="submit" onclick="valida()" class="btn btn-success " id="btn3" >	Enviar
 					</button>
 				</div>
 

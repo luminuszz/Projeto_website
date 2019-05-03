@@ -31,9 +31,17 @@
 		echo "<td>".$linha['email_aluno'].'</td>
 		</tr>';
 
-
-		}	
+	
 	?>
+  <td><a href="deleta_aluno.php?id_aluno=<?php echo $linha['id_aluno'];?>"><button class="btn btn-danger btn-sm">deletar</button></a></td></tr>
+  
+
+
+
+  <?php
+  }
+
+  ?>
 
 
    

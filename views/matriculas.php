@@ -30,9 +30,17 @@
     </tr>';
 
 
-    } 
+   
   ?>
 
+   <td><a href="deleta_matricula.php?id_aluno_curso=<?php echo $linha['id_aluno_curso'];?>"><button class="btn btn-danger btn-sm">deletar</button></a></td></tr>
+
+    <td><a href="edita_matricula.php?id_aluno_curso=<?php echo $linha['id_aluno_curso'];?>"><button class="btn btn-danger btn-sm">editar</button></a></td></tr>
+  <?php
+
+  }
+  
+  ?>
 
    
   </tbody>
